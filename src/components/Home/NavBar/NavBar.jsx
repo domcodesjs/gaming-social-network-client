@@ -1,26 +1,28 @@
-import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import React from "react";
 import { FaBars } from "react-icons/fa";
+import styled from "styled-components";
 
 const NavBar = () => {
     return (
-        <div>
+        <StyledMain>
             <div>
-                <h1>
-                    <a href='#menu'>
-                        <FaBars />
-                    </a>
-                </h1>
-            </div>
-            <div>
-                <div>
-                    <button>Login</button>
-                </div>
-                <div>
-                    <button>Sign Up</button>
+                <div className='nav-icon'>
+                    <h1>
+                        <a href='#menu'>
+                            <FaBars />
+                        </a>
+                    </h1>
                 </div>
             </div>
-        </div>
+        </StyledMain>
     );
 };
+const StyledMain = styled.main`
+    .nav-icon {
+        margin: 2rem;
+    }
+    a {
+        color: white;
+    }
+`;
 export default NavBar;

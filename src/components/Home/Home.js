@@ -20,9 +20,8 @@ const Home = () => {
                     <div className='intro-video'>
                         <iframe
                             title='mock video'
-                            width='420'
-                            height='320'
-                            src='https://www.youtube.com/embed/eW7Twd85m2g&ab_channel=StarWars'
+                            src='https://www.youtube.com/embed/eW7Twd85m2g'
+                            autoPlay
                         ></iframe>
                     </div>
                 </div>
@@ -35,11 +34,16 @@ const StyledMain = styled.main`
     * {
         padding: 0;
         margin: 0;
+        overflow: hidden;
     }
     body {
+        overflow: hidden;
+        max-height: 85rem;
+        margin-bottom: 0;
+        height: 1000%;
     }
     .title-motto {
-        padding-top: 14rem;
+        padding-top: 9rem;
         text-align: center;
         margin: auto;
     }
@@ -54,21 +58,22 @@ const StyledMain = styled.main`
     .landing-page {
         background-image: url(${backImgMobile});
         background-size: cover;
-        background-position: -80rem -8rem;
-        height: 90rem;
+        background-position: -80rem 0rem;
         padding-bottom: 0;
-        width: 100%;
         overflow-y: hidden;
         position: relative;
         margin: 0;
         padding: 0;
     }
+    iframe {
+        width: 220;
+        height: 220;
+    }
     @media all and (min-width: 700px) {
         .landing-page {
             background-image: url(${backImgDesktop});
-            background-size: 120%;
-            background-position: -5rem -4rem;
-            height: 115rem;
+            background-size: cover;
+            background-position: 0rem 0rem;
         }
         .main-content {
             margin-top: 30rem;
@@ -83,6 +88,10 @@ const StyledMain = styled.main`
         }
         span {
             font-size: 2rem;
+        }
+        iframe {
+            width: 440px;
+            height: 290px;
         }
     }
 `;
