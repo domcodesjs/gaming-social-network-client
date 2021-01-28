@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
+import { API_URL } from '../../config';
 
 const SignupForm = () => {
   const [username, setUsername] = useState('');
@@ -27,7 +28,7 @@ const SignupForm = () => {
 
     try {
       setErrors(null);
-      const res = await fetch('http://localhost:5000/users', {
+      const res = await fetch(`${API_URL}/users`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
